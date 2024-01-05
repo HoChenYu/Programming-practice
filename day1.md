@@ -9,3 +9,61 @@
 2. 是不是鏡像 答案只有yes or no(所以一樣是boolean函數)  
 流程圖:
 <img width="421" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/ffd4a5fa-0ae5-49c7-a23d-908264cafabd">  
+程式碼:
+```C++
+#include <iostream>
+#include <string>
+#include <unordered_map>
+using namespace std;
+bool palidrome(string s){
+	for(int i=0;i<s.length()/2;i++){
+		if(s[i]!=s[s.length()-1-i]){
+			return false;
+		}
+	}
+	return true;
+}
+bool mirrored(string s){
+	unordered_map<char, char> mirrorMap = {
+        {'A', 'A'}, {'E', '3'}, {'H', 'H'}, {'I', 'I'}, {'J', 'L'},
+        {'L', 'J'}, {'M', 'M'}, {'O', 'O'}, {'S', '2'}, {'T', 'T'},
+        {'U', 'U'}, {'V', 'V'}, {'W', 'W'}, {'X', 'X'}, {'Y', 'Y'}, {'Z', '5'},
+        {'1', '1'}, {'2', 'S'}, {'3', 'E'}, {'5', 'Z'}, {'8', '8'}
+    };
+	bool a=true;
+	for(int i=0;i<s.length()/2;i++){
+		char current =s[i];
+		char mirror = s[s.length()-1-i];
+		if(mirrorMap.find(current) != mirrorMap.end() && mirrorMap[current] == mirror){
+            continue;
+        } else {
+            a = false;
+            break;
+        }
+    }
+	return a;
+}
+int main(){
+	string str1;
+	int len;
+	while(cin>>str1){
+		if(palidrome(str1)){
+			if(mirrored(str1)){
+				cout<<str1<<" -- is a mirrored palindrome."<<endl<<endl;
+			}
+			else{
+				cout<<str1<<" -- is a regular palindrome."<<endl<<endl; 
+			}
+		}
+		else{
+			if(mirrored(str1)){
+				cout<<str1<<" -- is a mirrored string."<<endl<<endl;
+			}
+			else{
+				cout<<str1<<" -- is not a palindrome."<<endl<<endl;
+			}
+		}
+	}
+
+}
+```

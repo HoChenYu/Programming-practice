@@ -97,4 +97,26 @@ bool palidrome(string s){
 }
 ````
 ## 學習新知:
-### unordered_map
+### unordered_map  
+
+就是常見的key value，且為未排序，時間複雜度O(1)  
+
+建立一個為<char,char>的表:  
+
+````C++
+unordered_map<char, char> mirrorMap = {
+        {'A', 'A'}, {'E', '3'}, {'H', 'H'}, {'I', 'I'}, {'J', 'L'},
+        {'L', 'J'}, {'M', 'M'}, {'O', 'O'}, {'S', '2'}, {'T', 'T'},
+        {'U', 'U'}, {'V', 'V'}, {'W', 'W'}, {'X', 'X'}, {'Y', 'Y'}, {'Z', '5'},
+        {'1', '1'}, {'2', 'S'}, {'3', 'E'}, {'5', 'Z'}, {'8', '8'}
+    };
+````
+
+主要判斷式:  
+
+````C++
+if(mirrorMap.find(current) != mirrorMap.end() && mirrorMap[current] == mirror)
+````
+意思就是透過find()函式找current這個參數是否在表上搜索的到，若無則會回傳.end()這個函式，若有則回傳他在第幾個ex:second。所以是透過不等於的判斷式找到表上有對應的key，並且找到對應的value。  
+
+2024/1/5寫完該題 2024/1/8補充說明

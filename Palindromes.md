@@ -1,16 +1,19 @@
-## 題目:Palindromes  
+# 題目:Palindromes  
 <img width="505" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/fe1b128c-d33a-4a9a-9ff9-c0a02bf4d9c0">  
 <img width="520" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/f17d0368-7a39-4352-a26d-ed93c0ce0bcf">  
-範例輸入和輸出：  
-<img width="267" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/632f6d08-dd6f-4696-9788-171a00cd30bf">      
-問題分析：  
+  
+## 範例輸入和輸出：  
+<img width="267" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/632f6d08-dd6f-4696-9788-171a00cd30bf">  
+
+## 問題分析：  
 存在兩個主要判斷，判斷的結果只有2種，所以最後會有4種結果。  
 1. 是不是迴文 答案只有yes or no(所以這邊就會是使用回傳ture or false的 boolean函數)
-2. 是不是鏡像 答案只有yes or no(所以一樣是boolean函數)  
-流程圖:  
+2. 是不是鏡像 答案只有yes or no(所以一樣是boolean函數)
+
+## 流程圖:  
 <img width="421" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/ffd4a5fa-0ae5-49c7-a23d-908264cafabd">
 
-程式碼:  
+## 程式碼:  
 ````C++
 #include <iostream>
 #include <string>
@@ -69,3 +72,29 @@ int main(){
 }
 
 ````
+
+## 遇到問題:  
+1. 邏輯錯誤
+````C++
+bool palidrome(string s){
+	bool a=true;
+	for(int i=0;i<s.length()/2;i++){
+		if(s[i]==s[s.length()-1-i]){a=true;}
+		else{a=false;}
+	}
+	return a;
+}
+````
+預設返回a值，上述程式碼並未在發現錯誤時就停止，而是繼續檢查，變成說檢查到最靠近中間那項(也就是最後一次檢查)，只要他是true就會返回true，這樣的方式是錯誤的，ex:abcde，a和e是false，但b和d是true且為最後檢查，返回true。
+應該改為一遇到不相符的結果立即返回
+````C++
+bool palidrome(string s){
+	bool a=true;
+	for(int i=0;i<s.length()/2;i++){
+		if(s[i]!=s[s.length()-1-i]){a=false;}
+	}
+	return a;
+}
+````
+## 學習新知:
+### unordered_map

@@ -1,4 +1,12 @@
-# Sort!Sort!!Sort!!!  
+# 題目:Sort!Sort!!Sort!!!  
+<img width="638" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/b53900fa-e18f-40b1-82bb-5e83af1d34ca">
+
+## 範例輸入和輸出:
+<img width="108" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/9d45ece7-0240-4156-b5b3-3151f322a52d">
+<img width="102" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/31af1833-e9db-440d-b0cd-af4146d20bcc">  
+
+## 問題分析:
+
 ## 程式碼:
 ````C++
 #include <iostream>

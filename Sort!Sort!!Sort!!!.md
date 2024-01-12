@@ -6,7 +6,7 @@
 <img width="102" alt="image" src="https://github.com/HoChenYu/Programming-practice/assets/63805851/31af1833-e9db-440d-b0cd-af4146d20bcc">  
 
 ## 問題分析:
-
+題目為什麼叫sort!sort!!sort!!!，就是要進行三次的sorting，第一次是mod後的結果從小排到大，二、三次是遇到奇數和偶數的排序方式不同，偶數是小到大，奇數是大到小。
 ## 程式碼:
 ````C++
 #include <iostream>

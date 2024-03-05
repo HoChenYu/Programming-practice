@@ -32,7 +32,10 @@ char s[]="1234567890-=qwertyuiop[]\asdfghjkl;'zxcvbnm,./";
 //right answer
 char s[]="1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./";
 ````
-strchr(s,n)
+## strchr(s,n)
+
 s為查詢的字符串
+
 n為要查找的字符，須為ASCII值
-這題在對n做換小寫時就轉為ASCII
+
+這題在對n做換小寫時就轉為ASCII(tolower(n))

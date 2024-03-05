@@ -24,5 +24,6 @@ int main(){
 }
 ````
 # 解題要點
- toupper(n) 將字符轉為大寫的ASCII值
+ toupper(n) 將字符轉為大寫的ASCII值  
+  
  --len 因為開頭輸入的數字ex:3 不重要且會進入到while使得 len++

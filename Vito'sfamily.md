@@ -30,22 +30,29 @@ int main(){
 ````C++
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 using namespace std;
 int main(){
 	int n;
 	cin>>n;
 	while(n--){
-		int m,i,a[100000];
+		int s[501];
+		int m,total;
 		cin>>m;
-		for(i=0;i<m;i++){
-			cin>>a[i];
+		for(int i=0;i<m;i++){
+			cin>>s[i];
 		}
-		sort(a,a+m);
-		int sum=0;
-		for(i=0;i<m;i++){
-			sum+=abs(a[i]-a[m/2]);
+		sort(s,s+m);
+		total=0;
+		for(int i=0;i<m;i++){
+			total+=abs(s[i]-s[m/2]);
 		}
-		cout<<sum<<endl;
+		cout<<total<<endl;
 	}
-}	
+}
 ````
+# 錯誤檢討
+
+練了一陣子還是有這種低級錯誤... 
+
+while內放入cin>>只要>0恆true，換句話說while(cin>>n)即便在迴圈最後寫上n--都是沒有意義的，因為下次會輸入新的值

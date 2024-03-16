@@ -1,7 +1,7 @@
 # 題目:Fourth Point!! 
 ![image](https://github.com/HoChenYu/Programming-practice/assets/63805851/f4e2a2a3-d4da-47d9-94e6-223c398440f0)
 # 程式碼:
-````c++\
+````c++
 #include <iostream>
 #include <iomanip>
 using namespace std;
